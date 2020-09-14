@@ -10,7 +10,7 @@ module Api
             end
 
             def show
-                airline - Airline.find_by(slug: params[:slug])
+                airline = Airline.find_by(slug: params[:slug])
 
                 render json: AirlineSerializer.new(airline, options).serialized_json
             end
